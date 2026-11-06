@@ -1,0 +1,14 @@
+[Unit]
+Description=Pump.fun checker bot (Telegram)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bot
+WorkingDirectory=/home/bot/pump_alerts
+ExecStart=/home/bot/pump_alerts/.venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
